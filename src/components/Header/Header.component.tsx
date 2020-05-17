@@ -7,7 +7,7 @@ export function Header (): ReactElement {
     return (
         <div className="headerContainer">
             <div className="headerContainer__titleSection">
-                <h1 className="headerContainer__titleSection--title">PathFinder</h1>
+                <h1 className="headerContainer__titleSection--title">PathRenderer</h1>
                 <h2 className="headerContainer__titleSection--subtitle">showing a generated path from a text direction</h2>
             </div>
             <div className="headerContainer__changeSection">

@@ -1,0 +1,73 @@
+.gridContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .gridTitle {
+        font-size: 24px;
+    }
+}
+
+.legendContainer {
+    &__legendRow {
+        display: flex;
+        justify-content: center;
+        &--col {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            .td {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__legendTitle {
+        font-size: 18px;
+    }
+}
+
+td {
+    height: 50px;
+    width: 50px;
+}
+
+.td {
+    height: 50px;
+    width: 50px;
+}
+
+.active {
+    background-color: rgb(16, 177, 129);
+}
+
+.multi {
+    background-color: #114B5F;
+}
+
+.start {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(37, 42, 48, 0.6), rgba(37, 42, 48, 0.6)),
+    url("../../assets/flag-variant.png");
+}
+
+.stop {
+    background-color: #89043D;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(37, 42, 48, 0.2), rgba(37, 42, 48, 0.2)),
+    url("../../assets/turtle.png");
+}
+
+.left {
+    transform: rotate(-90deg);
+}
+
+.right {
+    transform: rotate(90deg);
+}
+
+.down {
+    transform: rotate(180deg);
+}
