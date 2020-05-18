@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 50vh;
+    margin-bottom: 50px;
 
     .gridTitle {
         font-size: 24px;
@@ -28,8 +30,9 @@
 }
 
 td {
-    height: 50px;
+    height: 30px;
     width: 50px;
+    background-color: #cff3e7;
 }
 
 .td {
@@ -70,4 +73,21 @@ td {
 
 .down {
     transform: rotate(180deg);
+}
+
+.loading {
+    background: url("../../assets/loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.errorContainer {
+    background-color: #D11919;
+    color: #F9F8F8;
+    padding: 20px;
+    p {
+        margin: 0;
+    }
 }

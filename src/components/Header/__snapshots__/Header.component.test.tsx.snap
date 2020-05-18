@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render properly 1`] = `
+<body>
+  <div>
+    <div
+      class="headerContainer"
+    >
+      <div
+        class="headerContainer__titleSection"
+      >
+        <h1
+          class="headerContainer__titleSection--title"
+        >
+          PathRenderer
+        </h1>
+        <h2
+          class="headerContainer__titleSection--subtitle"
+        >
+          showing a generated path from a text direction
+        </h2>
+      </div>
+      <div
+        class="headerContainer__changeSection"
+      >
+        <span
+          class="headerContainer__changeSection--selected"
+        >
+          directions-1
+        </span>
+        <div
+          class="headerContainer__changeSection--options"
+        >
+          <p
+            class="label"
+          >
+            select direction:
+          </p>
+          <select
+            data-testid="directions"
+            id="directions"
+            name="directionName"
+          >
+            <option
+              value="directions-1"
+            >
+              directions-1
+            </option>
+            <option
+              value="directions-2"
+            >
+              directions-2
+            </option>
+            <option
+              value="directions-3"
+            >
+              directions-3
+            </option>
+            <option
+              value="directions-4"
+            >
+              directions-4
+            </option>
+            <option
+              value="directions-5"
+            >
+              directions-5
+            </option>
+            <option
+              value="directions-6"
+            >
+              directions-6
+            </option>
+          </select>
+        </div>
+        <div
+          class="headerContainer__changeSection--button"
+        >
+          <button
+            id="loadButton"
+          >
+            Load Direction
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Header Component should render properly when direction is undefined 1`] = `
+<body>
+  <div>
+    <div
+      class="headerContainer"
+    >
+      <div
+        class="headerContainer__titleSection"
+      >
+        <h1
+          class="headerContainer__titleSection--title"
+        >
+          PathRenderer
+        </h1>
+        <h2
+          class="headerContainer__titleSection--subtitle"
+        >
+          showing a generated path from a text direction
+        </h2>
+      </div>
+      <div
+        class="headerContainer__changeSection"
+      >
+        <span
+          class="headerContainer__changeSection--selected"
+        >
+          directions-1
+        </span>
+        <div
+          class="headerContainer__changeSection--options"
+        >
+          <p
+            class="label"
+          >
+            select direction:
+          </p>
+          <select
+            data-testid="directions"
+            id="directions"
+            name="directionName"
+          >
+            <option
+              value="directions-1"
+            >
+              directions-1
+            </option>
+            <option
+              value="directions-2"
+            >
+              directions-2
+            </option>
+            <option
+              value="directions-3"
+            >
+              directions-3
+            </option>
+            <option
+              value="directions-4"
+            >
+              directions-4
+            </option>
+            <option
+              value="directions-5"
+            >
+              directions-5
+            </option>
+            <option
+              value="directions-6"
+            >
+              directions-6
+            </option>
+          </select>
+        </div>
+        <div
+          class="headerContainer__changeSection--button"
+        >
+          <button
+            id="loadButton"
+          >
+            Load Direction
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

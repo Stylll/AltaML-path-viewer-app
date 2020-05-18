@@ -5,7 +5,7 @@ import { AppContext } from '../../context';
 import { IAppContext, IDirection } from '../../types';
 
 export function GridMap (): ReactElement {
-    const { direction }: IAppContext = useContext(AppContext);
+    const { direction, isLoading, error }: IAppContext = useContext(AppContext);
 
     function generateCellClass (posXY: string, direction: IDirection): string {
 
@@ -54,20 +54,22 @@ export function GridMap (): ReactElement {
     function renderGrid (direction: IDirection): ReactElement {
         return (
             <table>
-                {direction && direction.bound.posYBound.map((posY: number): ReactElement => {
-                    const y: string = `${posY}`;
+                <tbody>
+                    {direction && direction.bound.posYBound.map((posY: number): ReactElement => {
+                        const y: string = `${posY}`;
 
-                    return (
-                        <tr key={posY}>
-                            {direction.bound.posXBound.map((posX: number): ReactElement => {
-                                const x: string = `${posX}`;
-                                const xy: string = `${x}${y}`;
+                        return (
+                            <tr key={posY}>
+                                {direction.bound.posXBound.map((posX: number): ReactElement => {
+                                    const x: string = `${posX}`;
+                                    const xy: string = `${x}/${y}`;
 
-                                return renderCell(xy, direction);
-                            })}
-                        </tr>
-                    );
-                })}
+                                    return renderCell(xy, direction);
+                                })}
+                            </tr>
+                        );
+                    })}
+                </tbody>
             </table>
         );
     }
@@ -98,15 +100,32 @@ export function GridMap (): ReactElement {
         );
     }
 
+    function renderError (error: string): ReactElement {
+        return (
+            <div className="errorContainer">
+                <p>{error}</p>
+            </div>
+        );
+    }
+
+    function RenderIsLoading (): ReactElement {
+        return (
+            <div className="loading" />
+        );
+    }
+
     return (
         <div>
+            {error && renderError(error)}
             <RenderLegend />
             <br/>
             <div className="gridContainer">
-                <div>
+                {isLoading && <RenderIsLoading />}
+                {!isLoading && <div>
                     <p className="gridTitle">Path</p>
                     {direction && renderGrid(direction)}
-                </div>
+                    {!direction && <p>No Path Available</p>}
+                </div>}
             </div>
         </div>
     );
