@@ -1,7 +1,8 @@
 # AltaML-path-viewer-app
-A react app displays the path consumed from AltaML-path-reader-api
+A react app displays the path consumed from AltaML-path-reader-api.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link to the app here [https://path-renderer.herokuapp.com](https://path-renderer.herokuapp.com)
+
 
 ## Available Scripts
 
