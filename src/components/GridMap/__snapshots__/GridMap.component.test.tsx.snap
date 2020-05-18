@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridMap Component should render properly 1`] = `
+<body>
+  <div>
+    <div>
+      
+      <div
+        class="legendContainer"
+      >
+        <p
+          class="legendContainer__legendTitle"
+        >
+          Legend
+        </p>
+        <div
+          class="legendContainer__legendRow"
+        >
+          <div
+            class="legendContainer__legendRow--col"
+          >
+            <div
+              class="td active"
+            />
+            <span>
+              Travel Path
+            </span>
+          </div>
+          <div
+            class="legendContainer__legendRow--col"
+          >
+            <div
+              class="td multi"
+            />
+            <span>
+              Cross Path
+            </span>
+          </div>
+          <div
+            class="legendContainer__legendRow--col"
+          >
+            <div
+              class="td start"
+            />
+            <span>
+              Start Position
+            </span>
+          </div>
+          <div
+            class="legendContainer__legendRow--col"
+          >
+            <div
+              class="td stop"
+            />
+            <span>
+              End Position
+            </span>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div
+        class="gridContainer"
+      >
+        <div>
+          <p
+            class="gridTitle"
+          >
+            Path
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=""
+                />
+                <td
+                  class=""
+                />
+                <td
+                  class=" stop up"
+                />
+              </tr>
+              <tr>
+                <td
+                  class=" active"
+                />
+                <td
+                  class=""
+                />
+                <td
+                  class=" start"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="multi"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=" active"
+                />
+                <td
+                  class=""
+                />
+                <td
+                  class=""
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

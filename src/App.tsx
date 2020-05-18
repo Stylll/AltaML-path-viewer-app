@@ -1,62 +1,67 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState, SetStateAction, Dispatch, useEffect } from 'react';
 
 // eslint-disable-next-line import/no-cycle
+import { Footer } from './components/Footer/Footer.component';
 import { GridMap } from './components/GridMap/GridMap.component';
 import { Header } from './components/Header/Header.component';
 import { AppContext } from './context';
-import { IAppContext, IDirection } from './types';
-
+import { defaultState } from './state';
 import './App.css';
+import { IDirection } from './types';
+import { fetchData } from './utils';
 
-const direction: IDirection = {
-    bound: {
-        posXBound: [-2,-1,0,1,2,3],
-        posYBound: [1,0,-1],
-    },
-    endPosition: {
-        raw: [3,1],
-        string: '31',
-    },
-    highestPosition: { x: 3,
-        y: 1 },
-    lastDirection: 'up',
-    lowestPosition: { x: -2,
-        y: -1 },
-    multiOccurence: ['-2-1'],
-    path: {
-        raw: [
-            [0,0],
-            [0,1],
-            [-1,1],
-            [-2,1],
-            [-2,0],
-            [-2,-1],
-            [-1,-1],
-            [0,-1],
-            [1,-1],
-            [1,0],
-            [2,0],
-            [3,0],
-            [3,1],
-        ],
-        string: ['00','01','-11','-21','-20','-2-1','-1-1','0-1','1-1','10','20','30','31'],
-    },
-    startPosition: {
-        raw: [0,0],
-        string: '00',
-    },
-};
+const SERVER_API: string | undefined = process.env.REACT_APP_SERVER_API;
 
 export function App (): ReactElement {
-    const state: IAppContext = {
-        direction: direction,
-    };
+
+    const [direction, setDirection]:
+    [IDirection | undefined, Dispatch<SetStateAction<IDirection | undefined>>]
+    = useState<IDirection | undefined>(defaultState.direction);
+
+    const [isLoading, setIsLoading]:
+    [boolean, Dispatch<SetStateAction<boolean>>] = useState<boolean>(false);
+
+    const [error, setError]:
+    [string, Dispatch<SetStateAction<string>>] = useState<string>('');
+
+    const errorMessage: string = 'An error occurred. Please try again.';
+
+    function loadDirection (directionName: string): void {
+        setIsLoading(true);
+        setError('');
+
+        const url: string = `${SERVER_API}?filename=${directionName}`;
+
+        fetchData(url)
+            .then((data): void => {
+                setIsLoading(false);
+                setDirection(data.data);
+            })
+            .catch((): void => {
+                setIsLoading(false);
+                setError(errorMessage);
+            });
+    }
+
+    useEffect((): void => {
+        loadDirection(defaultState.directionNames[0]);
+    }, []);
 
     return (
-        <AppContext.Provider value={state}>
+        <AppContext.Provider value={
+            {
+                direction: direction,
+                loadDirection: loadDirection,
+                directionNames: defaultState.directionNames,
+                isLoading: isLoading,
+                error: error,
+            }
+        }
+        >
             <div className="App">
                 <Header />
                 <GridMap />
+                <Footer />
             </div>
         </AppContext.Provider>
     );

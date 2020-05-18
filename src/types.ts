@@ -28,4 +28,13 @@ export interface IDirection {
 
 export interface IAppContext {
     direction: IDirection | undefined;
+    loadDirection?: (directionUrl: string) => void;
+    directionNames?: string[];
+    isLoading?: boolean;
+    error?: string;
+}
+
+export interface IState {
+    direction: IDirection | undefined;
+    directionNames: string[];
 }
